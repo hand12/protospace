@@ -27,6 +27,8 @@ gem 'haml-rails'
 
 gem 'erb2haml'
 
+gem 'bootstrap-sass'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
