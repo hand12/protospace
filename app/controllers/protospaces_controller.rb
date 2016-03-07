@@ -1,0 +1,2 @@
+class ProtospacesController < ApplicationController
+end

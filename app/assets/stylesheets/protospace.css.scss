@@ -114,9 +114,9 @@ body {
 
 .btn-circle.btn-xs {
   width: 30px;
-  height: 30px; 
+  height: 30px;
   min-width: 30px;
-  
+
   span {
     line-height: 30px;
   }
@@ -130,7 +130,7 @@ body {
 
 .btn-group.open .dropdown-toggle {
   outline: 0;
-  outline-offset: 0;  
+  outline-offset: 0;
   box-shadow: none;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
@@ -160,7 +160,7 @@ body {
   position: absolute;
   pointer-events: none;
   border-radius: 50%;
-  
+
   -webkit-transform: scale(0);
   -moz-transform: scale(0);
   -ms-transform: scale(0);
@@ -217,7 +217,7 @@ body {
 
 .btn-default {
   border: 1px solid #eee;
-  &:hover {  
+  &:hover {
     border: 1px solid #eee;
     background: #eee;
   }
@@ -227,17 +227,17 @@ body {
   background-image: linear-gradient(-180deg, #67ABFA 0%, #4A8DDC 100%);
   border: 1px solid #4A8EDD;
   border-radius: 3px;
-  
+
   &:hover {
     border: 1px solid #4A8EDD;
     opacity: 0.9;
   }
 }
 
-input[type="email"], 
-input[type="text"], 
-input[type="password"], 
-textarea, 
+input[type="email"],
+input[type="text"],
+input[type="password"],
+textarea,
 select {
   outline: none;
 }
@@ -254,14 +254,14 @@ body {
 .navbar-default {
   background-color: #fff;
   padding: 20px 0;
-  
+
   .navbar-brand {
     padding: 8px 0 0;
   }
-  
+
   .btn a {
     color: #fff;
-    
+
     &:hover {
       text-decoration: none;
     }
@@ -291,26 +291,26 @@ body {
     border-radius: 0;
     padding: 0;
   }
-  
+
   h3 {
     margin: 0;
     font-size: 1.6rem;
   }
-  
+
   .proto-meta {
     overflow: hidden;
     font-size: 1.2rem;
     padding: 10px 0;
-    
+
     .proto-user {
       float: left;
     }
-    
+
     .proto-posted {
       float: right;
     }
   }
-  
+
   .btn {
     font-size: 1rem;
     padding: 5px;
@@ -322,42 +322,42 @@ body {
 .proto-page {
   .user-nav {
     padding: 50px 0;
-    
+
     .media-object {
       border-radius: 50%;
     }
-  
+
     button {
       padding-right: 35px;
-      
+
       img {
         max-width: 18px;
         margin-right: 5px;
       }
-      
+
       .num {
-        font-weight: bold;  
+        font-weight: bold;
       }
     }
   }
-  
+
   .proto-description {
     padding: 20px 0 10px;
   }
-  
+
   .proto-comments {
     h4 {
       padding-bottom: 20px;
     }
-    
+
     form {
       margin: 40px 0;
     }
-    
+
     .form-group {
       textarea {
         width: 100%;
-      }  
+      }
     }
   }
 }
@@ -365,21 +365,21 @@ body {
 .user-page {
   .user-nav {
     padding: 50px 0;
-    
+
     .media-object {
       border-radius: 50%;
     }
-  
+
     button {
       padding-right: 35px;
-      
+
       img {
         max-width: 18px;
         margin-right: 5px;
       }
-      
+
       .num {
-        font-weight: bold;  
+        font-weight: bold;
       }
     }
   }
@@ -387,36 +387,36 @@ body {
 
 .proto-new {
   padding-top: 20px;
-  
+
   input[type="text"],
   textarea {
     border: 0;
     width: 100%;
     line-height: 3;
-    transition: all .15s ease-in-out; 
-    -o-transition: all .15s ease-in-out; 
-    -moz-transition: all .15s ease-in-out; 
+    transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
     -webkit-transition: all .15s ease-in-out;
     background-color: transparent;
     margin-bottom: 20px;
-    
+
     &:hover {
       color: lighten(#000,10%);
       box-shadow: 0 1px 1px #eee;
     }
   }
-  
+
   .proto-new-title {
     line-height: 60px;
     font-size: 24px;
   }
-  
+
   .cover-image-upload {
     background: image-url("noimage-big.png") #fff no-repeat center center;
     height: 500px;
     position: relative;
     margin-bottom: 20px;
-    
+
     input {
       position: absolute;
       left: 0;
@@ -429,16 +429,16 @@ body {
       cursor: pointer;
     }
   }
-  
+
   .list-group-item {
     border: 0;
     margin-bottom: 20px;
-    
+
     .image-upload {
       background: image-url("noimage.png") #fff no-repeat center center;
       height: 200px;
       position: relative;
-      
+
       input {
         position: absolute;
         left: 0;
@@ -449,14 +449,14 @@ body {
         opacity: 0;
         filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
         cursor: pointer;
-      }      
+      }
     }
-    
+
     .image-upload-plus {
       height: 200px;
       width: 100%;
       text-align: center;
-      
+
       span {
         color: #D1D7DB;
         font-size: 70px;
@@ -473,7 +473,7 @@ body {
 
 .user-new {
   padding-top: 20px;
-  
+
   input[type="email"],
   input[type="text"],
   input[type="password"],
@@ -481,30 +481,30 @@ body {
     border: 0;
     width: 100%;
     line-height: 3;
-    transition: all .15s ease-in-out; 
-    -o-transition: all .15s ease-in-out; 
-    -moz-transition: all .15s ease-in-out; 
+    transition: all .15s ease-in-out;
+    -o-transition: all .15s ease-in-out;
+    -moz-transition: all .15s ease-in-out;
     -webkit-transition: all .15s ease-in-out;
     background-color: transparent;
     margin-bottom: 20px;
-    
+
     &:hover {
       color: lighten(#000,10%);
       box-shadow: 0 1px 1px #eee;
     }
-   
+
     &.user-name {
       margin-top: 20px;
     }
   }
-    
+
   .user-email,
   .user-name,
   .user-password {
     line-height: 60px;
     font-size: 24px;
   }
-  
+
   .user-image {
     border: 2px solid #ddd;
     border-radius: 50%;
@@ -513,7 +513,7 @@ body {
     position: relative;
     background-color: #fff;
     background-size: cover;
-    
+
     button {
       font-size: 9px;
       position: absolute;
@@ -526,7 +526,7 @@ body {
       min-width: 75px;
       text-transform: capitalize;
     }
-    
+
     input {
       display: block;
       position: absolute;
@@ -551,16 +551,16 @@ body {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
-  
+
   .form-signin-heading {
     margin-bottom: 30px;
   }
-  
+
   .checkbox {
     margin-bottom: 10px;
     font-weight: normal;
   }
-  
+
   .form-control {
     position: relative;
     height: auto;
@@ -573,7 +573,7 @@ body {
       z-index: 2;
     }
   }
-  
+
   input[type="email"],
   input[type="password"] {
     border: 0;
@@ -585,7 +585,7 @@ body {
     -webkit-transition: all .15s ease-in-out;
     background-color: transparent;
     margin-bottom: 10px;
-    
+
     &:hover {
       color: lighten(#000,10%);
       box-shadow: 0 1px 1px #eee;
