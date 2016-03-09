@@ -1,2 +1,0 @@
-class ProtospacesController < ApplicationController
-end
