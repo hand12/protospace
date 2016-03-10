@@ -6,5 +6,4 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
   has_many :products
-  accepts_nested_attributes_for :products
 end

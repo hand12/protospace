@@ -23,10 +23,5 @@
 　　<%= f.file_field :image %>
 　　<%= f.hidden_field :image_cache %>
 
-<%= f.label :products, "タイトル" %><br />
-    <%= f.fields_for :products do |products_form| %>
-      <%= products_form.label :title, "タイトル" %>
-      <%= products_form.label :catchcopy, "キャッチコピー" %>
-      <%= products_form.label :concept, "コンセプト" %>
-    <% end %>
+
 <% end %>
