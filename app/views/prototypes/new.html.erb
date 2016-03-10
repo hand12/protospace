@@ -1,0 +1,7 @@
+<%= form_for @product do |f| %>
+  <%= f.text_field :title %>
+  <%= f.fields_for :product_image do |product_image_form| %>
+    <%= product_image_form.text_field :image %>
+  <% end  %>
+  <%= f.submit "Create" %>
+<% end %>
