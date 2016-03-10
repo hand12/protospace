@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  mount_uploader :image, ImageUploader
+  mount_uploader :avatar, AvatarUploader
   has_many :products
-  accepts_nested_attributes_for :addresses
+  accepts_nested_attributes_for :products
 end
