@@ -3,12 +3,30 @@
 　　<%= f.label :name %>
 　　<%= f.file_field :name %>
 
-　　<%= f.label :description %>
-　　<%= f.file_field :description %>
+　　<%= f.label :profile %>
+　　<%= f.file_field :profile %>
+
+　　<%= f.label :position %>
+　　<%= f.file_field :position %>
+
+　　<%= f.label :occupation %>
+　　<%= f.file_field :occupation %>
+
+　　<%= f.label :email %>
+　　<%= f.file_field :email %>
+
+　　<%= f.label :password %>
+　　<%= f.file_field :password %>
 
 　　<%= f.label :image %>
 　  <%= image_tag @user.image.thumb.url if @user.image? %>
 　　<%= f.file_field :image %>
 　　<%= f.hidden_field :image_cache %>
 
+<%= f.label :products, "タイトル" %><br />
+    <%= f.fields_for :products do |products_form| %>
+      <%= products_form.label :title, "タイトル" %>
+      <%= products_form.label :catchcopy, "キャッチコピー" %>
+      <%= products_form.label :concept, "コンセプト" %>
+    <% end %>
 <% end %>

@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   mount_uploader :image, ImageUploader
+  has_many :products
+  accepts_nested_attributes_for :addresses
 end
