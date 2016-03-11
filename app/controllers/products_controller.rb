@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
       :title,
       :catchcopy,
       :concept,
-        addresses_attributes: [:id, :image]
+        product_images_attributes: [:id, :image]
       )
   end
 
