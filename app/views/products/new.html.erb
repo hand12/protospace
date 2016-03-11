@@ -1,7 +1,13 @@
 <%= form_for @product do |f| %>
-  <%= f.text_field :title %>
+  <%= f.label :title, "タイトル" %>
+  <%= f.text_field :title %><br>
+  <%= f.label :catchcopy, "キャッチコピー" %>
+  <%= f.text_field :catchcopy %><br>
+  <%= f.label :concept, "コンセプト" %>
+  <%= f.text_field :concept %><br>
   <%= f.fields_for :product_image do |product_image_form| %>
-    <%= product_image_form.text_field :image %>
+    <%= product_image_form.label :image, "イメージ" %>
+    <%= product_image_form.file_field :image %><br>
   <% end  %>
   <%= f.submit "Create" %>
 <% end %>
