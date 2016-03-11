@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def new
     @product = Product.new
-    @product.product_images.build
+    3.times { @product.product_images.build }
   end
 
   def create
@@ -21,20 +21,12 @@ class ProductsController < ApplicationController
   private
 
   def create_params
-    params.require(:product).permit(
-      :title,
-      :catchcopy,
-      :concept,
-        product_images_attributes: [:id, :image]
+    params.require(:product).permit(:title, :catchcopy, :concept, product_images_attributes: [:id, :image]
       )
   end
 
   def update_params
-    params.require(:product).permit(
-      :title,
-      :catchcopy,
-      :concept,
-        product_images_attributes: [:id, :image, :_destroy]
+    params.require(:product).permit(:title, :catchcopy, :concept, product_images_attributes: [:id, :image, :_destroy]
       )
   end
 
