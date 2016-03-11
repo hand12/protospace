@@ -2,5 +2,5 @@ Rails.application.routes.draw do
 
 
   devise_for :users
-  resources :prototypes
+  resources :products
 end
