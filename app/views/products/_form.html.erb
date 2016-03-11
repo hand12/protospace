@@ -1,0 +1,35 @@
+<div class="container proto-new">
+  <div class="row">
+    <%= form_for @product do |f| %>
+      <div class="col-md-8 col-md-offset-2">
+        <div class="row user-nav row">
+
+          <div class="proto-new-title">
+            <%= f.label :title, "タイトル" %>
+            <%= f.text_field :title %><br>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <%= f.label :catchcopy, "キャッチコピー" %>
+          <%= f.text_field :catchcopy %><br>
+        </div>
+
+        <div class="col-md-12">
+          <%= f.label :concept, "コンセプト" %>
+          <%= f.text_field :concept %><br>
+        </div>
+
+        <div class="col-md-12 fileinput fileinput-new">
+          <%= f.fields_for :product_images do |product_image_form| %>
+            <%= product_image_form.label :image, "イメージ" %>
+            <%= product_image_form.file_field :image %><br>
+          <% end  %>
+        </div>
+          <div class="text-center proto-btn">
+            <%= f.submit "Create" %>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div>
