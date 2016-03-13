@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
   def new
     @product = Product.new
-    3.times { @product.product_images.build }
-    # @product.product_images.build
+    # 3.times { @product.product_images.build }
+    @product.product_images.build
   end
 
   def index
@@ -15,12 +15,12 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    redirect_to :action => 'index'
   end
 
   def update
     @product = Product.find(params[:id])
     @product.update(update_params)
+    redirect_to :action => 'index'
   end
 
 
