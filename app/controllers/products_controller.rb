@@ -5,12 +5,17 @@ class ProductsController < ApplicationController
     # @product.product_images.build
   end
 
+  def index
+  end
+
   def create
     Product.create(create_params)
+    redirect_to :action => 'index'
   end
 
   def edit
     @product = Product.find(params[:id])
+    redirect_to :action => 'index'
   end
 
   def update
