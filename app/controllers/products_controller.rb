@@ -9,12 +9,14 @@ class ProductsController < ApplicationController
   end
 
   def create
+    binding.pry
     Product.create(create_params)
     redirect_to :action => 'index'
   end
 
   def edit
     @product = Product.find(params[:id])
+    @product.product_images.build
   end
 
   def update
@@ -25,9 +27,8 @@ class ProductsController < ApplicationController
 
 
   private
-
   def create_params
-    params.require(:product).permit(:title, :catchcopy, :concept, product_images_attributes: [:id, :image]
+    params.require(:product).permit(:title, :catchcopy, :concept, product_images_attributes: [:image, :status]
       )
   end
 

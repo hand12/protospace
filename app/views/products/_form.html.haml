@@ -5,22 +5,27 @@
         .col-md-12
           .proto-new-title
           = f.text_field :title, autofocus: true, placeholder: "タイトル"
-      = f.fields_for :product_images do |product_images_form|
-        .row
-          .col-md-12
-            .cover-image-upload
-              = product_images_form.file_field :image
-          .col-md-12
-            %ul.proto-sub-list.list-group
-              %li.list-group-item.col-md-4
-                .image-upload
-                  = product_images_form.file_field :image
-              %li.list-group-item.col-md-4
-                .image-upload
-                  = product_images_form.file_field :image
-              %li.list-group-item.col-md-4
-                .image-upload-plus
-                  %span +
+          = f.fields_for :product_images do |product_images_form|
+            .row
+              .col-md-12
+                .cover-image-upload
+                  = product_images_form.file_field :image, as: :image_preview
+                  = product_images_form.hidden_field :status, {value: 'main'}
+              .col-md-12
+                %ul.proto-sub-list.list-group
+                = f.fields_for :product_images do |product_images_form|
+                  %li.list-group-item.col-md-4
+                    .image-upload
+                      = product_images_form.file_field :image
+                      = product_images_form.hidden_field :status, {value: 'sub'}
+                = f.fields_for :product_images do |product_images_form|
+                  %li.list-group-item.col-md-4
+                    .image-upload
+                      = product_images_form.file_field :image
+                      = product_images_form.hidden_field :status, {value: 'sub'}
+                  %li.list-group-item.col-md-4
+                    .image-upload-plus
+                      %span +
       .row.proto-description
         .col-md-12
           = f.text_field :catchcopy, placeholder: "キャッチコピー"
