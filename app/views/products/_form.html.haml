@@ -9,20 +9,20 @@
             .row
               .col-md-12
                 .cover-image-upload
-                  = product_images_form.file_field :image, as: :image_preview
+                  = product_images_form.file_field :image
                   = product_images_form.hidden_field :status, {value: 'main'}
               .col-md-12
                 %ul.proto-sub-list.list-group
-                = f.fields_for :product_images do |product_images_form|
                   %li.list-group-item.col-md-4
-                    .image-upload
-                      = product_images_form.file_field :image
-                      = product_images_form.hidden_field :status, {value: 'sub'}
-                = f.fields_for :product_images do |product_images_form|
+                    = f.fields_for :product_images do |product_images_form2|
+                      .image-upload
+                        = product_images_form2.file_field :image
+                        = product_images_form2.hidden_field :status, {value: 'sub'}
                   %li.list-group-item.col-md-4
-                    .image-upload
-                      = product_images_form.file_field :image
-                      = product_images_form.hidden_field :status, {value: 'sub'}
+                    = f.fields_for :product_images do |product_images_form3|
+                      .image-upload
+                        = product_images_form3.file_field :image
+                        = product_images_form3.hidden_field :status, {value: 'sub'}
                   %li.list-group-item.col-md-4
                     .image-upload-plus
                       %span +
