@@ -12,9 +12,9 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(create_params)
     if @product.save
-      redirect_to :action => 'index'
+      redirect_to action: 'index'
     else
-      redirect_to :action => 'new'
+      render :new
     end
   end
 
@@ -25,9 +25,9 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(update_params)
-      redirect_to :action => 'index'
+      redirect_to action: 'index'
     else
-      redirect_to :action => 'edit'
+      render :edit
     end
   end
 

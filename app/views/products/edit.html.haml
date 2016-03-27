@@ -22,7 +22,7 @@
                     = f.fields_for :product_images, @product do |product_images_form2|
                       .image-upload
                         = product_images_form2.file_field :image
-                        = product_images_form2.hidden_field :status, {value: 'sub2'}
+                        = product_images_form2.hidden_field :status, {value: 'sub'}
                   %li.list-group-item.col-md-4
                     .image-upload-plus
                       %span +
