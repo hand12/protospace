@@ -8,19 +8,19 @@
           = f.fields_for :product_images, @product do |product_images_form|
             .row
               .col-md-12
-                .cover-image-upload
-                  = product_images_form.file_field :image, as: :image_preview, input_html: { preview_version: :thumb }
+                .cover-image-upload{style: "background-image: url(#{product_images_form.object.product_images.main.first.image_url(:thumb)});" }
+                  = product_images_form.file_field :image
                   = product_images_form.hidden_field :status, {value: 'main'}
               .col-md-12
                 %ul.proto-sub-list.list-group
                   %li.list-group-item.col-md-4
                     = f.fields_for :product_images, @product do |product_images_form2|
-                      .image-upload
+                      .image-upload{style: "background-image: url(#{product_images_form.object.product_images.sub.first.image_url(:thumb)});" }
                         = product_images_form2.file_field :image
                         = product_images_form2.hidden_field :status, {value: 'sub'}
                   %li.list-group-item.col-md-4
                     = f.fields_for :product_images, @product do |product_images_form2|
-                      .image-upload
+                      .image-upload{style: "background-image: url(#{product_images_form.object.product_images.main.second.image_url(:thumb)});" }
                         = product_images_form2.file_field :image
                         = product_images_form2.hidden_field :status, {value: 'sub'}
                   %li.list-group-item.col-md-4
