@@ -14,15 +14,17 @@
               .col-md-12
                 %ul.proto-sub-list.list-group
                   %li.list-group-item.col-md-4
-                    = f.fields_for :product_images, @product do |product_images_form2|
-                      .image-upload{style: "background-image: url(#{product_images_form.object.product_images.sub.first.image_url(:thumb)});" }
-                        = product_images_form2.file_field :image
-                        = product_images_form2.hidden_field :status, {value: 'sub'}
+                    - if @product.product_images.sub.present?
+                      = f.fields_for :product_images, @product do |product_images_form2|
+                        .image-upload{style: "background-image: url(#{product_images_form.object.product_images.sub.first.image_url(:thumb)});" }
+                          = product_images_form2.file_field :image
+                          = product_images_form2.hidden_field :status, {value: 'sub'}
                   %li.list-group-item.col-md-4
-                    = f.fields_for :product_images, @product do |product_images_form2|
-                      .image-upload{style: "background-image: url(#{product_images_form.object.product_images.sub.second.image_url(:thumb)});" }
-                        = product_images_form2.file_field :image
-                        = product_images_form2.hidden_field :status, {value: 'sub'}
+                    - if @product.product_images.sub.present?
+                      = f.fields_for :product_images, @product do |product_images_form2|
+                        .image-upload{style: "background-image: url(#{product_images_form.object.product_images.sub.second.image_url(:thumb)});" }
+                          = product_images_form2.file_field :image
+                          = product_images_form2.hidden_field :status, {value: 'sub'}
                   %li.list-group-item.col-md-4
                     .image-upload-plus
                       %span +
