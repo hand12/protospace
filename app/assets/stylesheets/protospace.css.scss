@@ -415,7 +415,7 @@ body {
   
   .cover-image-upload {
     background: image-url("noimage-big.png") #fff no-repeat center center;
-    height: 500px;
+    height: 300px;
     position: relative;
     margin-bottom: 20px;
     
@@ -429,6 +429,11 @@ body {
       opacity: 0;
       filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
       cursor: pointer;
+    }
+     img {
+      display: block;
+      margin: 0 auto;
+      max-height: 300px;
     }
     
   }
@@ -452,7 +457,13 @@ body {
         opacity: 0;
         filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
         cursor: pointer;
-      }      
+      }
+      img {
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+      max-height: 200px;
+      }
     }
     
     .image-upload-plus {
@@ -595,3 +606,4 @@ body {
     }
   }
 }
+

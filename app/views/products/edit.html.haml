@@ -8,26 +8,41 @@
           = f.fields_for :product_images, @product do |product_images_form|
             .row
               .col-md-12
-                .cover-image-upload{style: "background-image: url(#{product_images_form.object.product_images.main.first.image_url}); background-size: contain;" }
+                .cover-image-upload
+                  = image_tag product_images_form.object.product_images.main.first.image_url
                   = product_images_form.file_field :image
                   = product_images_form.hidden_field :status, {value: 'main'}
-              .col-md-12
-                %ul.proto-sub-list.list-group
-                  %li.list-group-item.col-md-4
-                    - if @product.product_images.sub.present?
-                      = f.fields_for :product_images, @product do |product_images_form2|
-                        .image-upload{style: "background-image: url(#{product_images_form.object.product_images.sub.first.image_url(:thumb)});" }
-                          = product_images_form2.file_field :image
-                          = product_images_form2.hidden_field :status, {value: 'sub'}
-                  %li.list-group-item.col-md-4
-                    - if @product.product_images.sub.present?
-                      = f.fields_for :product_images, @product do |product_images_form2|
-                        .image-upload{style: "background-image: url(#{product_images_form.object.product_images.sub.second.image_url(:thumb)});" }
-                          = product_images_form2.file_field :image
-                          = product_images_form2.hidden_field :status, {value: 'sub'}
-                  %li.list-group-item.col-md-4
-                    .image-upload-plus
-                      %span +
+                  = product_images_form.hidden_field :id, value: product_images_form.object.product_images.main.first.id
+                .col-md-12
+                  %ul.proto-sub-list.list-group
+                    - @product.product_images.sub.each do |sub_image|
+                      %li.list-group-item.col-md-4
+                        - if @product.product_images.sub.present?
+                          = f.fields_for :product_images, @product do |product_images_form2|
+                            .image-upload
+                              = image_tag product_images_form.object.product_images.sub.first.image_url
+                              = product_images_form2.file_field :image
+                              = product_images_form2.hidden_field :status, {value: 'sub'}
+                              = product_images_form2.hidden_field :id, value:  sub_image.id
+                    %li.list-group-item.col-md-4
+                      .image-upload-plus
+                        %span +
+                  -# %li.list-group-item.col-md-4
+                  -#   - if @product.product_images.sub.present?
+                  -#     = f.fields_for :product_images, @product do |product_images_form2|
+                  -#       .image-upload
+                  -#         = image_tag product_images_form.object.product_images.sub.second.image_url
+                  -#         = product_images_form2.file_field :image
+                  -#         = product_images_form2.hidden_field :status, {value: 'sub'}
+                  -# %li.list-group-item.col-md-4
+                  -#   - if @product.product_images.sub.third.present?
+                  -#     = f.fields_for :product_images, @product do |product_images_form3|
+                  -#       .image-upload
+                  -#         = product_images_form3.file_field :image
+                  -#         = product_images_form3.hidden_field :status, {value: 'sub'}
+                  -#   - else
+                  -#     .image-upload-plus
+                  -#       %span +
       .row.proto-description
         .col-md-12
           = f.text_field :catchcopy, placeholder: "キャッチコピー"

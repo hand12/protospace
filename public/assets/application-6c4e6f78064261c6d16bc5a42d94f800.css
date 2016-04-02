@@ -6,7 +6,6 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 @import "//fonts.googleapis.com/css?family=Lato:300,400,700";
-@import "//fonts.googleapis.com/css?family=Lato:300,400,700";
 /* line 9, /Users/macuser/.rvm/gems/ruby-2.1.1/gems/bootstrap-sass-3.3.6/assets/stylesheets/bootstrap/_normalize.scss */
 html {
   font-family: sans-serif;
@@ -8810,25 +8809,8 @@ body {
   -moz-font-feature-settings: "liga", "kern";
 }
 
-/* -- import Roboto Font ------------------------------ */
-/*-- Body style ---------------------------------- */
-/* line 23, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
-body {
-  font-family: "Lato", 'Helvetica Neue, Helvetica, Arial', sans-serif;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 1.4;
-  color: #212121;
-  overflow-x: hidden;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -moz-font-feature-settings: "liga", "kern";
-}
-
 /* -- Main style ------------------------------------ */
-/* line 40, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 22, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn {
   font-family: "Lato", 'Helvetica Neue, Helvetica, Arial', sans-serif;
   font-size: 14px;
@@ -8839,13 +8821,13 @@ body {
   color: rgba(255, 255, 255, 0.87);
 }
 
-/* line 50, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 32, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn-default, .btn-link {
   color: rgba(0, 0, 0, 0.87);
 }
 
 /* -- Buttons style ------------------------------------ */
-/* line 56, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 38, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn {
   outline: 0;
   outline-offset: 0;
@@ -8856,7 +8838,7 @@ body {
   -moz-transition: all .15s ease-in-out;
   -webkit-transition: all .15s ease-in-out;
 }
-/* line 67, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 49, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn:focus, .btn:active, .btn.active, .btn:active:focus, .btn.active:focus {
   outline: 0;
   outline-offset: 0;
@@ -8866,13 +8848,13 @@ body {
 }
 
 /* -- Buttons sizes -------------------------------- */
-/* line 79, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 61, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn {
   min-width: 88px;
   padding: 10px 14px;
 }
 
-/* line 84, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 66, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn-lg, .btn-group-lg > .btn, .btn-group-lg > .btn {
   min-width: 122px;
   padding: 10px 16px;
@@ -8880,7 +8862,7 @@ body {
   line-height: 1.3;
 }
 
-/* line 91, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 73, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn-sm, .btn-group-sm > .btn, .btn-group-sm > .btn {
   min-width: 64px;
   padding: 4px 12px;
@@ -8888,7 +8870,7 @@ body {
   line-height: 1.5;
 }
 
-/* line 98, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 80, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn-xs, .btn-group-xs > .btn, .btn-group-xs > .btn {
   min-width: 46px;
   padding: 2px 10px;
@@ -8896,57 +8878,57 @@ body {
   line-height: 1.5;
 }
 
-/* line 105, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 87, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn-circle {
   width: 56px;
   height: 56px;
   min-width: 56px;
 }
-/* line 110, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 92, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn-circle span {
   line-height: 56px;
 }
 
-/* line 115, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 97, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn-circle.btn-lg, .btn-group-lg > .btn-circle.btn {
   width: 78px;
   height: 78px;
   min-width: 78px;
 }
-/* line 120, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 102, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn-circle.btn-lg span, .btn-group-lg > .btn-circle.btn span {
   line-height: 78px;
 }
 
-/* line 125, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 107, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn-circle.btn-sm, .btn-group-sm > .btn-circle.btn {
   width: 40px;
   height: 40px;
   min-width: 40px;
 }
-/* line 130, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 112, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn-circle.btn-sm span, .btn-group-sm > .btn-circle.btn span {
   line-height: 40px;
 }
 
-/* line 135, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 117, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn-circle.btn-xs, .btn-group-xs > .btn-circle.btn {
   width: 30px;
   height: 30px;
   min-width: 30px;
 }
-/* line 140, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 122, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn-circle.btn-xs span, .btn-group-xs > .btn-circle.btn span {
   line-height: 30px;
 }
 
 /*-- Button groups --------------------------------- */
-/* line 147, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 129, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn-group .btn {
   border-radius: 2px;
 }
 
-/* line 151, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 133, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn-group.open .dropdown-toggle {
   outline: 0;
   outline-offset: 0;
@@ -8955,30 +8937,30 @@ body {
   -webkit-box-shadow: none;
 }
 
-/* line 159, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 141, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn-group .btn + .btn, .btn-group .btn + .btn-group, .btn-group .btn-group + .btn, .btn-group .btn-group + .btn-group {
   margin-left: 0;
 }
 
-/* line 163, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 145, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn-group > .btn:hover, .btn-group-vertical > .btn:hover {
   z-index: 0;
 }
 
-/* line 166, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 148, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn-group > .btn:focus:hover, .btn-group-vertical > .btn:focus:hover, .btn-group > .btn:active:hover, .btn-group-vertical > .btn:active:hover, .btn-group > .btn.active:hover, .btn-group-vertical > .btn.active:hover {
   z-index: 2;
 }
 
 /* -- Ripple effect -------------------------------- */
-/* line 173, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 155, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .ripple-effect {
   position: relative;
   overflow: hidden;
   -webkit-transform: translate3d(0, 0, 0);
 }
 
-/* line 178, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 160, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .ink {
   display: block;
   position: absolute;
@@ -8993,7 +8975,7 @@ body {
   opacity: 1;
 }
 
-/* line 195, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 177, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .ink.animate {
   -webkit-animation: ripple .5s linear;
   -moz-animation: ripple .5s linear;
@@ -9036,29 +9018,29 @@ body {
     transform: scale(2.5);
   }
 }
-/* line 238, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 220, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn-default {
   border: 1px solid #eee;
 }
-/* line 240, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 222, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn-default:hover {
   border: 1px solid #eee;
   background: #eee;
 }
 
-/* line 246, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 228, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn-primary {
   background-image: linear-gradient(-180deg, #67ABFA 0%, #4A8DDC 100%);
   border: 1px solid #4A8EDD;
   border-radius: 3px;
 }
-/* line 251, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 233, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .btn-primary:hover {
   border: 1px solid #4A8EDD;
   opacity: 0.9;
 }
 
-/* line 257, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 239, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 input[type="email"],
 input[type="text"],
 input[type="password"],
@@ -9067,36 +9049,36 @@ select {
   outline: none;
 }
 
-/* line 265, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 247, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 *:focus {
   outline: none;
 }
 
-/* line 269, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 251, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 body {
   padding-top: 92px;
   background-color: #F7F7F7;
 }
 
-/* line 274, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 256, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .navbar-default {
   background-color: #fff;
   padding: 20px 0;
 }
-/* line 278, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 260, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .navbar-default .navbar-brand {
   padding: 8px 0 0;
 }
-/* line 282, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 264, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .navbar-default .btn a {
   color: #fff;
 }
-/* line 285, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 267, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .navbar-default .btn a:hover {
   text-decoration: none;
 }
 
-/* line 291, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 273, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .jumbotron {
   background-image: url(/assets/header_bg-a83eec5e69045276bfb096bdcc631c17.png);
   background-position: center 92px;
@@ -9107,7 +9089,7 @@ body {
   margin-bottom: 0;
 }
 
-/* line 301, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 283, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .filter-nav {
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(100, 100, 100, 0.2);
@@ -9115,31 +9097,31 @@ body {
   margin-bottom: 20px;
 }
 
-/* line 310, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 292, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-content .thumbnail {
   border-radius: 0;
   padding: 0;
 }
-/* line 315, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 297, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-content h3 {
   margin: 0;
   font-size: 1.6rem;
 }
-/* line 320, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 302, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-content .proto-meta {
   overflow: hidden;
   font-size: 1.2rem;
   padding: 10px 0;
 }
-/* line 325, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 307, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-content .proto-meta .proto-user {
   float: left;
 }
-/* line 329, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 311, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-content .proto-meta .proto-posted {
   float: right;
 }
-/* line 334, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 316, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-content .btn {
   font-size: 1rem;
   padding: 5px;
@@ -9147,71 +9129,71 @@ body {
   border: 1px solid #eee;
 }
 
-/* line 343, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 325, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-page .user-nav {
   padding: 50px 0;
 }
-/* line 346, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 328, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-page .user-nav .media-object {
   border-radius: 50%;
 }
-/* line 350, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 332, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-page .user-nav button {
   padding-right: 35px;
 }
-/* line 353, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 335, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-page .user-nav button img {
   max-width: 18px;
   margin-right: 5px;
 }
-/* line 358, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 340, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-page .user-nav button .num {
   font-weight: bold;
 }
-/* line 364, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 346, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-page .proto-description {
   padding: 20px 0 10px;
 }
-/* line 369, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 351, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-page .proto-comments h4 {
   padding-bottom: 20px;
 }
-/* line 373, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 355, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-page .proto-comments form {
   margin: 40px 0;
 }
-/* line 378, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 360, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-page .proto-comments .form-group textarea {
   width: 100%;
 }
 
-/* line 386, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 368, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .user-page .user-nav {
   padding: 50px 0;
 }
-/* line 389, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 371, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .user-page .user-nav .media-object {
   border-radius: 50%;
 }
-/* line 393, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 375, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .user-page .user-nav button {
   padding-right: 35px;
 }
-/* line 396, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 378, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .user-page .user-nav button img {
   max-width: 18px;
   margin-right: 5px;
 }
-/* line 401, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 383, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .user-page .user-nav button .num {
   font-weight: bold;
 }
 
-/* line 408, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 390, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-new {
   padding-top: 20px;
 }
-/* line 411, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 393, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-new input[type="text"],
 .proto-new textarea {
   border: 0;
@@ -9224,25 +9206,25 @@ body {
   background-color: transparent;
   margin-bottom: 20px;
 }
-/* line 423, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 405, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-new input[type="text"]:hover,
 .proto-new textarea:hover {
   color: #1a1a1a;
   box-shadow: 0 1px 1px #eee;
 }
-/* line 429, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 411, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-new .proto-new-title {
   line-height: 60px;
   font-size: 24px;
 }
-/* line 434, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 416, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-new .cover-image-upload {
   background: url(/assets/noimage-big-1e46e18977547db7a6eeed34edb9e867.png) #fff no-repeat center center;
-  height: 500px;
+  height: 300px;
   position: relative;
   margin-bottom: 20px;
 }
-/* line 440, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 422, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-new .cover-image-upload input {
   position: absolute;
   left: 0;
@@ -9254,18 +9236,24 @@ body {
   filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
   cursor: pointer;
 }
-/* line 453, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 433, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+.proto-new .cover-image-upload img {
+  display: block;
+  margin: 0 auto;
+  max-height: 300px;
+}
+/* line 441, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-new .list-group-item {
   border: 0;
   margin-bottom: 20px;
 }
-/* line 457, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 445, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-new .list-group-item .image-upload {
   background: url(/assets/noimage-bb4f9cb5096882ec3caf68f458d0ee7c.png) #fff no-repeat center center;
   height: 200px;
   position: relative;
 }
-/* line 462, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 450, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-new .list-group-item .image-upload input {
   position: absolute;
   left: 0;
@@ -9277,30 +9265,30 @@ body {
   filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
   cursor: pointer;
 }
-/* line 475, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 463, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-new .list-group-item .image-upload-plus {
   height: 200px;
   width: 100%;
   text-align: center;
 }
-/* line 480, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 468, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-new .list-group-item .image-upload-plus span {
   color: #D1D7DB;
   font-size: 70px;
   padding-top: 50px;
   display: inline-block;
 }
-/* line 488, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 476, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .proto-new .proto-btn {
   max-width: 300px;
   margin: auto;
 }
 
-/* line 494, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 482, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .user-new {
   padding-top: 20px;
 }
-/* line 497, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 485, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .user-new input[type="email"],
 .user-new input[type="text"],
 .user-new input[type="password"],
@@ -9315,7 +9303,7 @@ body {
   background-color: transparent;
   margin-bottom: 20px;
 }
-/* line 511, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 499, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .user-new input[type="email"]:hover,
 .user-new input[type="text"]:hover,
 .user-new input[type="password"]:hover,
@@ -9323,21 +9311,21 @@ body {
   color: #1a1a1a;
   box-shadow: 0 1px 1px #eee;
 }
-/* line 516, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 504, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .user-new input[type="email"].user-name,
 .user-new input[type="text"].user-name,
 .user-new input[type="password"].user-name,
 .user-new textarea.user-name {
   margin-top: 20px;
 }
-/* line 521, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 509, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .user-new .user-email,
 .user-new .user-name,
 .user-new .user-password {
   line-height: 60px;
   font-size: 24px;
 }
-/* line 528, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 516, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .user-new .user-image {
   border: 2px solid #ddd;
   border-radius: 50%;
@@ -9347,7 +9335,7 @@ body {
   background-color: #fff;
   background-size: cover;
 }
-/* line 537, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 525, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .user-new .user-image button {
   font-size: 9px;
   position: absolute;
@@ -9360,7 +9348,7 @@ body {
   min-width: 75px;
   text-transform: capitalize;
 }
-/* line 550, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 538, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .user-new .user-image input {
   display: block;
   position: absolute;
@@ -9374,28 +9362,28 @@ body {
   opacity: 0;
   filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
 }
-/* line 564, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 552, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .user-new .user-btn {
   max-width: 300px;
   margin: auto;
 }
 
-/* line 570, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 558, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .form-signin {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
 }
-/* line 575, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 563, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .form-signin .form-signin-heading {
   margin-bottom: 30px;
 }
-/* line 579, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 567, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .form-signin .checkbox {
   margin-bottom: 10px;
   font-weight: normal;
 }
-/* line 584, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 572, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .form-signin .form-control {
   position: relative;
   height: auto;
@@ -9405,11 +9393,11 @@ body {
   padding: 10px;
   font-size: 16px;
 }
-/* line 592, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 580, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .form-signin .form-control:focus {
   z-index: 2;
 }
-/* line 597, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 585, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .form-signin input[type="email"],
 .form-signin input[type="password"] {
   border: 0;
@@ -9422,7 +9410,7 @@ body {
   background-color: transparent;
   margin-bottom: 10px;
 }
-/* line 609, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
+/* line 597, /Users/macuser/projects/protospace/app/assets/stylesheets/protospace.css.scss */
 .form-signin input[type="email"]:hover,
 .form-signin input[type="password"]:hover {
   color: #1a1a1a;

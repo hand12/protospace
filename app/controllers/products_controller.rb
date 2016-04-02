@@ -39,7 +39,7 @@ class ProductsController < ApplicationController
   end
 
   def update_params
-    params.require(:product).permit(:title, :catchcopy, :concept, product_images_attributes: [:image, :status, :_destroy]
+    params.require(:product).permit(:title, :catchcopy, :concept, product_images_attributes: [:image, :status, :id, :_destroy]
       )
   end
 
