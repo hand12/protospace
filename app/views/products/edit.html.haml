@@ -5,28 +5,34 @@
         .col-md-12
           .proto-new-title
           = f.text_field :title, autofocus: true, placeholder: "タイトル"
-          = f.fields_for :product_images, @product do |product_images_form|
+          = f.fields_for :product_images, @product do |ff|
             .row
               .col-md-12
                 .cover-image-upload
-                  = image_tag product_images_form.object.product_images.main.first.image_url
-                  = product_images_form.file_field :image
-                  = product_images_form.hidden_field :status, {value: 'main'}
-                  = product_images_form.hidden_field :id, value: product_images_form.object.product_images.main.first.id
+                  = image_tag ff.object.product_images.main.first.image_url
+                  = ff.file_field :image
+                  = ff.hidden_field :status, {value: 'main'}
+                  = ff.hidden_field :id, value: ff.object.product_images.main.first.id
                 .col-md-12
                   %ul.proto-sub-list.list-group
-                    - @product.product_images.sub.each do |sub_image|
+                    - @product.product_images.sub.each_with_index do |sub_image, i|
                       %li.list-group-item.col-md-4
                         - if @product.product_images.sub.present?
-                          = f.fields_for :product_images, @product do |product_images_form2|
+                          = f.fields_for :product_images, @product do |q|
                             .image-upload
-                              = image_tag product_images_form.object.product_images.sub.first.image_url
-                              = product_images_form2.file_field :image
-                              = product_images_form2.hidden_field :status, {value: 'sub'}
-                              = product_images_form2.hidden_field :id, value:  sub_image.id
-                    %li.list-group-item.col-md-4
+                              = image_tag q.object.product_images.sub[i].image_url
+                              = q.file_field :image
+                              = q.hidden_field :status, {value: 'sub'}
+                              = q.hidden_field :id, value:  @product.product_images.sub[i].id
+                    %li.list-group-item.col-md-4.plus
                       .image-upload-plus
                         %span +
+                      %li.list-group-item.col-md-4.appear
+                        = f.fields_for :product_images, @product do |q|
+                          .image-upload
+                            = q.file_field :image
+                            = q.hidden_field :status, {value: 'sub'}
+                            = q.hidden_field :id, value:  @product.product_images.sub[1].id + 1
       .row.proto-description
         .col-md-12
           = f.text_field :catchcopy, placeholder: "キャッチコピー"
@@ -43,4 +49,3 @@
               %input{:type => "text", :placeholder => "Application"}/
       .row.text-center.proto-btn
         %button.btn.btn-lg.btn-primary.btn-block{:type => "submit"} Publish
-  }
