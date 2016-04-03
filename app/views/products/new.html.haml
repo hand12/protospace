@@ -23,6 +23,11 @@
                       .image-upload
                         = q.file_field :image
                         = q.hidden_field :status, {value: 'sub'}
+                  %li.list-group-item.col-md-4.appear
+                    = f.fields_for :product_images, @product do |q|
+                      .image-upload
+                        = q.file_field :image
+                        = q.hidden_field :status, {value: 'sub'}
                   %li.list-group-item.col-md-4
                     .image-upload-plus
                       %span +
