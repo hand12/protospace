@@ -458,11 +458,18 @@ body {
         filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
         cursor: pointer;
       }
-      img {
-      object-fit: cover;
-      display: block;
-      margin: 0 auto;
-      max-height: 200px;
+
+      .img_box {
+        width: 100%;
+        height: auto;
+
+        img {
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+        height: 200px;
+        max-width: 200px;
+        }
       }
     }
     
