@@ -41,7 +41,6 @@ gem 'rmagick'
 gem 'simple_form'
 gem 'pry-rails'
 
-gem "nested_form_fields"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

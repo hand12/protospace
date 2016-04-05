@@ -11,7 +11,6 @@
 // about supported directives.
 //
 
-//= require nested_form_fields
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks

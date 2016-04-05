@@ -5,7 +5,7 @@
         .col-md-12
           .proto-new-title
           = f.text_field :title, autofocus: true, placeholder: "タイトル"
-          = f.fields_for :product_images, @product do |ff|
+          = f.fields_for :product_images do |ff|
             .row
               .col-md-12
                 .cover-image-upload
@@ -14,17 +14,12 @@
               .col-md-12
                 %ul.proto-sub-list.list-group
                   %li.list-group-item.col-md-4
-                    = f.fields_for :product_images, @product do |q|
+                    = f.fields_for :product_images do |q|
                       .image-upload
                         = q.file_field :image
                         = q.hidden_field :status, {value: 'sub'}
                   %li.list-group-item.col-md-4
-                    = f.fields_for :product_images, @product do |q|
-                      .image-upload
-                        = q.file_field :image
-                        = q.hidden_field :status, {value: 'sub'}
-                  %li.list-group-item.col-md-4.appear
-                    = f.fields_for :product_images, @product do |q|
+                    = f.fields_for :product_images do |q|
                       .image-upload
                         = q.file_field :image
                         = q.hidden_field :status, {value: 'sub'}
