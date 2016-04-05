@@ -19,18 +19,18 @@
                       - if @product.product_images.sub.present?
                         = f.fields_for :product_images,  @product_image do |q|
                           .image-upload
-                            = image_tag @product.product_images.sub[0].image_url
+                            = image_tag @product.product_images.sub[0].image_url if @product.product_images.sub[0]
                             = q.file_field :image
                             = q.hidden_field :status, {value: 'sub'}
-                            = q.hidden_field :id, value:  @product.product_images.sub[0].id
+                            = q.hidden_field :id, value:  @product.product_images.sub[0].id if @product.product_images.sub[0]
                     %li.list-group-item.col-md-4
                       - if @product.product_images.sub.present?
                         = f.fields_for :product_images,  @product_image do |q|
                           .image-upload
-                            = image_tag @product.product_images.sub[1].image_url
+                            = image_tag @product.product_images.sub[1].image_url if @product.product_images.sub[1]
                             = q.file_field :image
                             = q.hidden_field :status, {value: 'sub'}
-                            = q.hidden_field :id, value:  @product.product_images.sub[1].id
+                            = q.hidden_field :id, value:  @product.product_images.sub[1].id if @product.product_images.sub[1]
                     %li.list-group-item.col-md-4.plus
                       .image-upload-plus
                         %span +
