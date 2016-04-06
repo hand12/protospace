@@ -9,30 +9,23 @@
             .row
               .col-md-12
                 .cover-image-upload
-                  = image_tag @product.product_images.main.first.image_url
+                  = image_tag @product.main_image[0].image_url
                   = ff.file_field :image
                   = ff.hidden_field :status, {value: 'main'}
-                  = ff.hidden_field :id, value: @product.product_images.main.first.id
+                  = ff.hidden_field :id, value: @product.main_image[0].id
                 .col-md-12
                   %ul.proto-sub-list.list-group
-                    %li.list-group-item.col-md-4
-                      - if @product.product_images.sub.present?
+                    - @product.sub_image.each_with_index do |image, i|
+                      %li.list-group-item.col-md-4
                         = f.fields_for :product_images,  @product_image do |q|
                           .image-upload
                             .img_box
-                              = image_tag @product.product_images.sub[0].image_url if @product.product_images.sub[0]
+                              = image_tag image.image_url if image
                               = q.file_field :image
                               = q.hidden_field :status, {value: 'sub'}
-                              = q.hidden_field :id, value:  @product.product_images.sub[0].id if @product.product_images.sub[0]
-                    %li.list-group-item.col-md-4
-                      - if @product.product_images.sub.present?
-                        = f.fields_for :product_images,  @product_image do |q|
-                          .image-upload
-                            .img_box
-                              = image_tag @product.product_images.sub[1].image_url if @product.product_images.sub[1]
-                              = q.file_field :image
-                              = q.hidden_field :status, {value: 'sub'}
-                              = q.hidden_field :id, value:  @product.product_images.sub[1].id if @product.product_images.sub[1]
+                              = q.hidden_field :id, value:  image.id if image
+                      - if i == 1
+                        - break
                     %li.list-group-item.col-md-4.plus
                       .image-upload-plus
                         %span +
@@ -40,7 +33,7 @@
                         = f.fields_for :product_images, @product_image do |q|
                           .image-upload
                             .img_box
-                              = image_tag @product.product_images.sub[2].image_url if @product.product_images.sub[2]
+                              = image_tag @product.sub_image[2].image_url if @product.sub_image[2]
                               = q.file_field :image
                               = q.hidden_field :status, {value: 'sub'}
       .row.proto-description

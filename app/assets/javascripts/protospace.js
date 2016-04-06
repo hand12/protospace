@@ -3,5 +3,4 @@ $(window).on("load", function() {
       $('.appear').show();
       $(this).hide();
     });
-  console.log("click");
 })
