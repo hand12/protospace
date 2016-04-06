@@ -6,10 +6,10 @@ class Product < ActiveRecord::Base
   validates :title, presence: true
 
   def main_image
-    self.product_images.main
+    product_images.main[0]
   end
 
-  def sub_image
-    self.product_images.sub
+  def sub_image(num)
+    product_images.sub[num]
   end
 end

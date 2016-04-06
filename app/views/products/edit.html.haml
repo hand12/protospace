@@ -9,23 +9,21 @@
             .row
               .col-md-12
                 .cover-image-upload
-                  = image_tag @product.main_image[0].image_url
+                  = image_tag @product.main_image.image_url
                   = ff.file_field :image
                   = ff.hidden_field :status, {value: 'main'}
-                  = ff.hidden_field :id, value: @product.main_image[0].id
+                  = ff.hidden_field :id, value: @product.main_image.id
                 .col-md-12
                   %ul.proto-sub-list.list-group
-                    - @product.sub_image.each_with_index do |image, i|
+                    - 2.times do |i|
                       %li.list-group-item.col-md-4
                         = f.fields_for :product_images,  @product_image do |q|
                           .image-upload
                             .img_box
-                              = image_tag image.image_url if image
+                              = image_tag @product.sub_image(i).image_url if @product.sub_image(i)
                               = q.file_field :image
                               = q.hidden_field :status, {value: 'sub'}
-                              = q.hidden_field :id, value:  image.id if image
-                      - if i == 1
-                        - break
+                              = q.hidden_field :id, value:  @product.sub_image(i).id if @product.sub_image(i)
                     %li.list-group-item.col-md-4.plus
                       .image-upload-plus
                         %span +
@@ -33,7 +31,7 @@
                         = f.fields_for :product_images, @product_image do |q|
                           .image-upload
                             .img_box
-                              = image_tag @product.sub_image[2].image_url if @product.sub_image[2]
+                              = image_tag @product.sub_image(2).image_url if @product.sub_image(2)
                               = q.file_field :image
                               = q.hidden_field :status, {value: 'sub'}
       .row.proto-description
