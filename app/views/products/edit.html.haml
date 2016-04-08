@@ -20,10 +20,10 @@
                         = f.fields_for :product_images,  @product_image do |q|
                           .image-upload
                             .img_box
-                              = image_tag @product.sub_image(i).image_url if @product.sub_image(i)
+                              = image_tag @product.sub_image_url(i)
                               = q.file_field :image
                               = q.hidden_field :status, {value: 'sub'}
-                              = q.hidden_field :id, value:  @product.sub_image(i).id if @product.sub_image(i)
+                              = q.hidden_field :id, value:  @product.sub_image_id(i)
                     %li.list-group-item.col-md-4.plus
                       .image-upload-plus
                         %span +
@@ -31,7 +31,7 @@
                         = f.fields_for :product_images, @product_image do |q|
                           .image-upload
                             .img_box
-                              = image_tag @product.sub_image(2).image_url if @product.sub_image(2)
+                              = image_tag @product.sub_image_url(2)
                               = q.file_field :image
                               = q.hidden_field :status, {value: 'sub'}
       .row.proto-description

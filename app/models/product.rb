@@ -12,4 +12,14 @@ class Product < ActiveRecord::Base
   def sub_image(num)
     product_images.sub[num]
   end
+
+  def sub_image_url(num)
+    product_images.sub[num].image_url if sub_image(num)
+  end
+
+  def sub_image_id(num)
+    product_images.sub[num].id if sub_image(num)
+  end
+
+
 end
