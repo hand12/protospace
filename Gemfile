@@ -6,7 +6,7 @@ gem 'rails', '4.2.4'
 # Use mysql as the database for Active Record
 gem 'mysql2', '~> 0.3.20'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '~> 5.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -34,6 +34,13 @@ gem 'devise'
 gem 'carrierwave'
 
 gem 'rmagick'
+
+# gem 'compass-rails','~> 2.0'
+# gem 'sprockets', '2.11.0'
+
+gem 'simple_form'
+gem 'pry-rails'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

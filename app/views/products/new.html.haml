@@ -1,0 +1,41 @@
+.container.proto-new
+  = simple_form_for (@product) do |f|
+    .col-md-8.col-md-offset-2
+      %header.row.user-nav.row
+        .col-md-12
+          .proto-new-title
+          = f.text_field :title, autofocus: true, placeholder: "タイトル"
+          = f.fields_for :product_images do |ff|
+            .row
+              .col-md-12
+                .cover-image-upload
+                  = ff.file_field :image
+                  = ff.hidden_field :status, {value: 'main'}
+              .col-md-12
+                %ul.proto-sub-list.list-group
+                  - 2.times do
+                    %li.list-group-item.col-md-4
+                      = f.fields_for :product_images do |q|
+                        .image-upload
+                          = q.file_field :image
+                          = q.hidden_field :status, {value: 'sub'}
+                  %li.list-group-item.col-md-4
+                    .image-upload-plus
+                      %span +
+      .row.proto-description
+        .col-md-12
+          = f.text_field :catchcopy, placeholder: "キャッチコピー"
+        .col-md-12
+          = f.text_field :concept, cols: "30", rows: "4", placeholder: "コンセプト"
+        .col-md-12
+          %h4 Tag List
+          .row
+            .col-md-3
+              %input{:type => "text", :placeholder => "Web Design"}/
+            .col-md-3
+              %input{:type => "text", :placeholder => "UI"}/
+            .col-md-3
+              %input{:type => "text", :placeholder => "Application"}/
+      .row.text-center.proto-btn
+        %button.btn.btn-lg.btn-primary.btn-block{:type => "submit"} Publish
+  }
