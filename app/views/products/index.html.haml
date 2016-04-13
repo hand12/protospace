@@ -20,11 +20,13 @@
           %a{:href => ""}
             = link_to (image_tag product.main_image.image_url), product_path(product.id)
             .caption
-              %h3 #{product.title}
+              %h3
+                = product.title
               .proto-meta
                 .proto-user
                   %a{:href => "#"} by user
-                .proto-posted #{product.created_at.strftime("%b %d")}
+                .proto-posted
+                  = product.created_at.strftime("%b %d")
               %ul.proto-tag-list.list-inline
                 %li
                   %a{:href => "#", :class => "btn btn-default"} iPad
