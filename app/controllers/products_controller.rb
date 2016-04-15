@@ -5,13 +5,17 @@ class ProductsController < ApplicationController
   end
 
   def index
+    @products = Product.all
+  end
 
+  def show
+    @product = Product.find(params[:id])
   end
 
   def create
     @product = Product.new(create_params)
     if @product.save
-      redirect_to action: 'index'
+      redirect_to :root
     else
       render :new
     end
@@ -25,7 +29,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     if @product.update(update_params)
-      redirect_to action: 'index'
+      redirect_to :root
     else
       render :edit
     end
