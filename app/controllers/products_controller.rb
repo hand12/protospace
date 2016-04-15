@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @likes = Like.where(product_id: params[:id])
   end
 
   def create
