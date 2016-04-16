@@ -9,14 +9,12 @@
           %h4#top-aligned-media.media-heading
             = @product.title
           .proto-user
-            %a{:href => ""} by User
-            %span.degree we-b inc. Designer
-
-    .col-md-6.text-right
-      %button.btn.btn-default
-        = image_tag("icon_heart.svg")
-        Like
-        %span.num 20
+            %a{:href => ""}
+              = current_user.name
+            %span.degree
+              = current_user.member
+    .col-md-6.text-right#like
+      = render partial: 'like', locals: {product: @product, like: @like}
     .row
       .col-md-9
         = image_tag(@product.main_image.image_url, :class => 'img-responsive')

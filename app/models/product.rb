@@ -22,9 +22,4 @@ class Product < ActiveRecord::Base
     product_images.sub[num].id if sub_image(num)
   end
 
-  def like_user(user)
-    likes.find_by(user_id: user)
-  end
-
-
 end
