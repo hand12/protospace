@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    @like = @product.likes.create(user_id: current_user.id)
+    @like = @product.likes.find_by(user_id: current_user.id)
   end
 
   def create

@@ -1,12 +1,12 @@
-- if like.user_id == current_user.id
-  = button_to product_like_path(product.id, like.id), class: 'btn btn-default', method: :delete, remote: true do
-    = image_tag("icon_heart_red.svg")
+- if like.blank?
+  = button_to product_likes_path(product.id), class: 'btn btn-default', remote: true do
+    = image_tag("icon_heart.svg")
     Like
     %span.num
       = product.likes_count
 - else
-  = button_to product_likes_path(product.id), class: 'btn btn-default', remote: true do
-    = image_tag("icon_heart.svg")
+  = button_to product_like_path(product.id, like.id), class: 'btn btn-default', method: :delete, remote: true do
+    = image_tag("icon_heart_red.svg")
     Like
     %span.num
       = product.likes_count
