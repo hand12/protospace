@@ -9,6 +9,7 @@
           %h4#top-aligned-media.media-heading
             = @product.title
           .proto-user
+          - if user_signed_in?
             %a{:href => ""}
               = current_user.name
             %span.degree
