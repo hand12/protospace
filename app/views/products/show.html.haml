@@ -15,7 +15,7 @@
             %span.degree
               = current_user.member
     .col-md-6.text-right#like
-      = render partial: 'like', locals: {product: @product, like: @like}
+      = render partial: 'likes/like', locals: {product: @product, like: @like}
     .row
       .col-md-9
         = image_tag(@product.main_image.image_url, :class => 'img-responsive')
