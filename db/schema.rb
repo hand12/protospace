@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160311042327) do
+ActiveRecord::Schema.define(version: 20160422014234) do
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.integer  "product_id", limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "likes", ["product_id"], name: "index_likes_on_product_id", using: :btree
+  add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
 
   create_table "product_images", force: :cascade do |t|
     t.text     "image",      limit: 65535
@@ -22,12 +32,13 @@ ActiveRecord::Schema.define(version: 20160311042327) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.text     "catchcopy",  limit: 65535
-    t.text     "concept",    limit: 65535
-    t.integer  "user_id",    limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "title",       limit: 255
+    t.text     "catchcopy",   limit: 65535
+    t.text     "concept",     limit: 65535
+    t.integer  "user_id",     limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "likes_count", limit: 4
   end
 
   create_table "users", force: :cascade do |t|
@@ -44,9 +55,14 @@ ActiveRecord::Schema.define(version: 20160311042327) do
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
     t.string   "avatar",                 limit: 255
+    t.string   "member",                 limit: 255
+    t.string   "profile",                limit: 255
+    t.string   "name",                   limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "likes", "products"
+  add_foreign_key "likes", "users"
 end

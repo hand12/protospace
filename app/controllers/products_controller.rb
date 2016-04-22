@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!, except: [:show]
   def new
     @product = Product.new
     @product.product_images.build
@@ -10,6 +11,9 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    if user_signed_in?
+      @like = @product.likes.find_by(user_id: current_user.id)
+    end
   end
 
   def create
@@ -39,7 +43,7 @@ class ProductsController < ApplicationController
   private
   def create_params
     params.require(:product).permit(:title, :catchcopy, :concept, product_images_attributes: [:image, :status]
-      )
+      ).merge(user_id: current_user.id)
   end
 
   def update_params
