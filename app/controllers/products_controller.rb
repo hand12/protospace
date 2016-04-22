@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
       @like = @product.likes.find_by(user_id: current_user.id)
     end
     @comment = Comment.new
+    @comments = Comment.all
   end
 
   def create
