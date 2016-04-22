@@ -1,1 +1,2 @@
-$('#comment_comment').val('')
+$('#comment_comment').val('');
+$('#comment').html('<%= j(render partial: 'comments/comment', collection: @comments) %>');

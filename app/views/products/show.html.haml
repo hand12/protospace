@@ -48,12 +48,13 @@
       Comments
       %span.num (#{@comments.count})
     .col-md-8
-      = render partial: 'comments/comment', collection: @comments
-      %form.form-inline{:role => "form"}
-      = form_for [@product, @comment], remote: true do |f|
-        %h4 Write a comment
-        .row
-          .form-group.col-md-10
-            = f.text_area :comment, placeholder: "Youy comments", class: 'form-control'
-          .form-group.col-md-2
-            = f.submit 'Comment', class: 'btn btn-primary'
+      #comment
+        = render partial: 'comments/comment', collection: @comments
+      .form-inline
+        = form_for [@product, @comment], remote: true do |f|
+          %h4 Write a comment
+          .row
+            .form-group.col-md-10
+              = f.text_area :comment, placeholder: "Youy comments", class: 'form-control'
+            .form-group.col-md-2
+              = f.submit 'Comment', class: 'btn btn-primary'
