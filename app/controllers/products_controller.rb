@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
       @like = @product.likes.find_by(user_id: current_user.id)
     end
     @comment = Comment.new
-    @comments = Comment.all
+    @comments = @product.comments
   end
 
   def create
@@ -44,8 +44,7 @@ class ProductsController < ApplicationController
 
   private
   def create_params
-    params.require(:product).permit(:title, :catchcopy, :concept, product_images_attributes: [:image, :status]
-      ).merge(user_id: current_user.id)
+    params.require(:product).permit(:title, :catchcopy, :concept, product_images_attributes: [:image, :status]).merge(tag_list: params[:product][:tag], user_id: current_user.id)
   end
 
   def update_params

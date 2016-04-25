@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
   def create
+    @product = Product.find(params[:product_id])
     Comment.create(comment_params)
-    @comments = Comment.all
+    @comments = @product.comments
   end
 
   private
