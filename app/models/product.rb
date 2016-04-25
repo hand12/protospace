@@ -4,11 +4,18 @@ class Product < ActiveRecord::Base
   has_many :likes
   has_many :comments
   accepts_nested_attributes_for :product_images, allow_destroy: true, reject_if: proc { |attributes| attributes['image'].blank? }
+  # acts_as_taggable_on :products
+  acts_as_taggable
+  acts_as_ordered_taggable_on :products
 
   validates :title, presence: true
 
   def main_image
     product_images.main[0]
+  end
+
+  def main_image_url
+    product_images.main[0].image_url if main_image
   end
 
   def sub_image(num)

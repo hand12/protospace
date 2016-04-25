@@ -1,0 +1,33 @@
+.jumbotron
+  .container.text-center
+    = image_tag "header_logo.png", alt: "PROTO TYPE - SHARE THE product", height: '73px'
+.filter-nav
+  .container
+    .row.clearfix
+      %ul.nav.nav-pills.left
+        %li#js-ranking{role: 'presentation'}
+          = link_to 'Pupular', root_path, class: 'btn btn-default right'
+        %li#js-newest{role: 'presentation'}
+          = link_to 'Newest', root_path, class: 'btn btn-default right'
+      %ul.nav.nav-pills.right
+        %li#js-tags{role: 'presentation'}
+          = link_to 'View Tags', tags_path, class: 'btn btn-default right'
+
+.container.proto-list
+  .row
+    .col-sm-12.col-md-12
+      .thumbnail.tag-square
+        %span= @tag
+    - @products.each do |product|
+      .col-sm-4.col-md-3.proto-content
+        .thumbnail
+          = link_to image_tag(product.main_image_url), product_path(product.id)
+          .caption
+            %h3
+              = product.title
+            .proto-meta
+              .proto-user
+                %a{:href => "#"} by #{product.user.name}
+              .proto-posted
+                = product.created_at.strftime("%b %d")
+            %ul.proto-tag-list.list-inline.index-tag-list
