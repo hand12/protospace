@@ -4,33 +4,33 @@
 
 .filter-nav
   .container
-    .row
+    .row.clearfix
       %ul.nav.nav-pills.col-lg-11
         %li.active{:role => "presentation"}
           %a{:href => "#"} Popular PROTO
         %li{:role => "presentation"}
           %a{:href => "#"} Newest PROTO
-      %button{:type => "button", :class => "btn btn-default col-lg-1"} View Tags
+        %li
+          = link_to 'View Tags', tags_path, class: 'btn btn-default right'
 
 .container.proto-list
   .row
     - @products.each do |product|
       .col-sm-4.col-md-3.proto-content
         .thumbnail
-          = link_to (image_tag product.main_image.image_url), product_path(product.id)
+          = link_to (image_tag product.main_image_url), product_path(product.id)
           .caption
             %h3
               = product.title
             .proto-meta
               .proto-user
-                %a{:href => "#"} by user
+                %a{:href => "#"} #{current_user.name}
               .proto-posted
                 = product.created_at.strftime("%b %d")
             %ul.proto-tag-list.list-inline
-              %li
-                %a{:href => "#", :class => "btn btn-default"} iPad
-              %li
-                %a{:href => "#", :class => "btn btn-default"} wireframe
+              - product.tags.each do |tag|
+                %li
+                  = link_to "#{tag.name}", tag_path(tag.id), class: "btn btn-default"
 .text-center
   %ul.pagination
     %li.disabled
