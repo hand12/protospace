@@ -5,7 +5,6 @@ class Product < ActiveRecord::Base
   has_many :comments
   accepts_nested_attributes_for :product_images, allow_destroy: true, reject_if: proc { |attributes| attributes['image'].blank? }
   acts_as_taggable
-  acts_as_ordered_taggable_on :products
 
   validates :title, presence: true
 
