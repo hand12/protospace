@@ -40,6 +40,7 @@ gem 'rmagick'
 
 gem 'simple_form'
 gem 'pry-rails'
+gem 'acts-as-taggable-on'
 
 
 # Use ActiveModel has_secure_password
