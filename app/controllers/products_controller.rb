@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all
+    @products = Product.order("created_at DESC").page(params[:page]).per(10)
   end
 
   def show
