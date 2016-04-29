@@ -1,0 +1,15 @@
+.col-sm-4.col-md-3.proto-content
+  .thumbnail
+    = link_to (image_tag product.main_image_url), product_path(product.id)
+    .caption
+      %h3
+        = product.title
+      .proto-meta
+        .proto-user
+          %a{:href => "#"} #{current_user.name}
+        .proto-posted
+          = product.created_at.strftime("%b %d")
+      %ul.proto-tag-list.list-inline
+        - product.tags.each do |tag|
+          %li
+            = link_to "#{tag.name}", tag_path(tag.id), class: "btn btn-default"

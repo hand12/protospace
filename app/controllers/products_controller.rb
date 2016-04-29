@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all
+    @products = Product.order("likes_count DESC").page(params[:page]).per(10)
   end
 
   def show

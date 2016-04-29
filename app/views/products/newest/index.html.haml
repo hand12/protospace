@@ -16,7 +16,7 @@
 
 .container.proto-list
   .row
-    = render @products
+    = render partial: "products/product", collection: @products
 .text-center
   %ul.pagination
     = paginate @products
