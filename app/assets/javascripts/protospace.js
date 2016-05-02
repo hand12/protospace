@@ -22,7 +22,6 @@ $(window).on("load", function() {
 
         fileReader.onload = function() {
         // fileReaderが読み込まれたら、function()を実行する
-        console.log(self)
           // このselfは上の方で定義した$(this)。
           // rubyと違って、関数の中に関数を定義しているからスコープがややこしい
           self.css({
