@@ -9,10 +9,6 @@
     .navbar-collapse.collapse.navbar-responsive-collapse
       //not login
       - if user_signed_in?
-        %ul.nav.navbar-nav.navbar-right
-          %li
-            .btn.btn-primary.navbar-btn
-              = link_to "Get Started", new_user_registration_path
         //login
         %ul.nav.navbar-nav.navbar-right
           %li.dropdown
@@ -32,3 +28,6 @@
           %li
             .btn.btn-primary.navbar-btn
               = link_to 'Sign In', new_user_session_path
+          %li
+            .btn.btn-primary.navbar-btn
+              = link_to "Get Started", new_user_registration_path
