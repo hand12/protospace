@@ -19,9 +19,14 @@
                         .image-upload.preview
                           = q.file_field :image
                           = q.hidden_field :status, {value: 'sub'}
-                  %li.list-group-item.col-md-4
+                  %li.list-group-item.col-md-4.plus
                     .image-upload-plus
                       %span +
+                  %li.list-group-item.col-md-4.appear
+                    = f.fields_for :product_images do |q|
+                      .image-upload.preview
+                        = q.file_field :image
+                        = q.hidden_field :status, {value: 'sub'}
       .row.proto-description
         .col-md-12
           = f.text_field :catchcopy, placeholder: "キャッチコピー"
