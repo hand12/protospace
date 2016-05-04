@@ -27,6 +27,7 @@
           %h4 Works
           .user-name_image.row
             .user-name.col-md-12
+              = f.text_area :work, cols: 30, rows: "4", placeholder: "work"
 
       .row.text-center.user-btn
         = f.submit "Save", class: "btn btn-lg btn-primary btn-block"
