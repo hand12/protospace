@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
+  resources :users, only: :show
 
   namespace :products do
-    resources :newest, only: [:index]
+    resources :newest, only: :index
   end
 
   resources :products do

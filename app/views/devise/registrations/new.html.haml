@@ -10,7 +10,7 @@
               = f.text_field :name, placeholder: "Username", autofocus: true
             .user-image.col-md-2
               %button.btn.btn-primary Add image
-              %input{:type => "file"}/
+              = f.file_field :avatar
           = f.email_field :email, placeholder: 'email', class: 'user-email'
           = f.password_field :password, placeholder: 'password', class: 'user-password'
           = f.password_field :password_confirmation, autocomplete: "off", placeholder: 'Confirm password', class: 'user-password'
@@ -26,5 +26,6 @@
           %h4 Works
           .user-name_image.row
             .user-name.col-md-12
+              = f.text_area :work, cols: 30, rows: "4", placeholder: "work"
       .row.text-center.user-btn
         = f.submit "Save", class: "btn btn-lg btn-primary btn-block"
