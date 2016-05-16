@@ -43,6 +43,9 @@ gem 'kaminari'
 gem 'simple_form'
 gem 'pry-rails'
 gem 'acts-as-taggable-on'
+gem 'fog'
+gem 'dotenv-rails'
+
 
 
 # Use ActiveModel has_secure_password
