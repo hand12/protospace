@@ -7,5 +7,8 @@ class User < ActiveRecord::Base
   has_many :products
   has_many :likes
   has_many :comments
+
+  validates :name, :email, presence: true
+
   mount_uploader :avatar, ImageUploader
 end
