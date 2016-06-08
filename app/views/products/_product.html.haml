@@ -1,4 +1,14 @@
 .col-sm-4.col-md-3.proto-content
+  - if product.user == current_user
+    .drop_menu_location
+      -# %button#dropdownMenu.btn.btn-default.dropdown-toggle{ aria-expanded= "false", data-toggle="dropdown", type="button"}
+      %button#dropdownMenu.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :type => "button"}
+        Action
+      %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu1"}
+        %li
+          = link_to 'Edit', edit_product_path(product)
+        %li
+          = link_to 'Delete', product_path(product), method: :delete
   .thumbnail
     = link_to (image_tag product.main_image_url), product_path(product.id)
     .caption
