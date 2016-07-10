@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
   def new
     @product = Product.new
     @product.product_images.build
@@ -10,7 +11,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
     if user_signed_in?
       @like = @product.likes.find_by(user_id: current_user.id)
     end
@@ -21,30 +21,27 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(create_params)
     if @product.save
-      redirect_to :root
+      redirect_to :root, notice: "create a product!"
     else
       render :new
     end
   end
 
   def edit
-    @product = Product.find(params[:id])
     @product_image = @product.product_images.build
   end
 
   def update
-    @product = Product.find(params[:id])
     if @product.update(update_params)
-      redirect_to :root
+      redirect_to :root, notice: "update a product!"
     else
       render :edit
     end
   end
 
   def destroy
-    @product = Product.find(params[:id])
     @product.destroy
-    redirect_to :root
+    redirect_to :root, notice: "destroy a product!"
   end
 
   private
@@ -55,6 +52,10 @@ class ProductsController < ApplicationController
   def update_params
     params.require(:product).permit(:title, :catchcopy, :concept, product_images_attributes: [:image, :status, :id, :_destroy]
       )
+  end
+
+  def set_product
+    @product = Product.find(params[:id])
   end
 
 end
