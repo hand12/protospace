@@ -2,29 +2,24 @@ require 'rails_helper'
 describe Product do
   describe 'associations' do
     context "with comments" do
+      let(:comments_count) {5}
+      let!(:product) {create(:product, :with_comments)}
       it "deletes the comments when product is deleted" do
-        product = create(:product)
-        before_delete_comment_num = Comment.count
-        product.destroy
-        after_delete_comment_num = Comment.count
-        expect(after_delete_comment_num).to be < before_delete_comment_num
+        expect{product.destroy}.to change(Comment, :count).by(-1*comments_count)
       end
     end
     context "with likes" do
+      let(:likes_count) {5}
+      let!(:product) {create(:product, :with_likes)}
       it "deletes the likes when product is deleted" do
-        product = create(:product)
-        product.likes << Like.create
-        before_delete_like_num = Like.count
-        product.destroy
-        after_delete_like_num = Like.count
-        expect(after_delete_like_num).to be < before_delete_like_num
+        expect{product.destroy}.to change(Like, :count).by(-1*likes_count)
       end
     end
   end
   describe 'validations' do
     context "with valid attributes" do
+      let(:product) {create(:product)}
       it "has a valid factory" do
-        product = build(:product)
         product.valid?
         expect(product).to be_valid
       end
@@ -47,27 +42,10 @@ describe Product do
       end
     end
   end
-  describe '#posted_date' do
+  describe "#strftime" do
     it "returns dates in a specified format" do
-      product = create(:product)
-      day = Time.now.strftime("%b %d")
-      posted_day = product.created_at.strftime("%b %d")
-      expect(posted_day).to include(day)
-    end
-  end
-  describe '#liked_by?(user)' do
-    context "when liked by a user" do
-      it "returns true" do
-        product = create(:product)
-        product.likes << Like.create
-        expect(product.likes.present?).to be true
-      end
-    end
-    context "when not liked by a user" do
-      it "returns nil" do
-        product = create(:product)
-        expect(product.likes.present?).to be false
-      end
+      product = build(:product, created_at: "2016-05-07")
+      expect(product.created_at.strftime("%b %d %a")).to eq "May 07 Sat"
     end
   end
 end
