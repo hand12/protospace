@@ -25,5 +25,15 @@ FactoryGirl.define do
       end
     end
 
+    trait :with_images do
+      transient do
+        images_count 0
+      end
+
+      after(:create) do |product|
+        product.product_images << create_list(:product_image, 5)
+      end
+    end
+
   end
 end

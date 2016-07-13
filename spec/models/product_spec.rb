@@ -15,6 +15,13 @@ describe Product do
         expect{product.destroy}.to change(Like, :count).by(-1*likes_count)
       end
     end
+    context "with images" do
+      let(:images_count) {5}
+      let!(:product) {create(:product, :with_images)}
+      it "deletes the images when product is deleted" do
+        expect{product.destroy}.to change(ProductImage, :count).by(-1*images_count)
+      end
+    end
   end
   describe 'validations' do
     context "with valid attributes" do
