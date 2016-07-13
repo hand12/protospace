@@ -1,5 +1,4 @@
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = devise_error_messages!
+= form_for(@user) do |f|
   .container.user-new{:action => ""}
     .col-md-8.col-md-offset-2
       %header.row.user-nav.row
@@ -12,10 +11,6 @@
               = f.file_field :avatar
               %button.btn.btn-primary Change image
               %input{:type => "file"}/
-          = f.email_field :email, placeholder: "email", class: "user-email"
-          = f.password_field :current_password, placeholder: "current-password", class: "user-password"
-          = f.password_field :password, placeholder: "password", class: "user-password"
-          = f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm password"
         .col-md-12
           %h4 Member of
           .user-user-member.row

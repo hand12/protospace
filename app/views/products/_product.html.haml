@@ -2,9 +2,9 @@
   - if product.user == current_user
     .drop_menu_location
       -# %button#dropdownMenu.btn.btn-default.dropdown-toggle{ aria-expanded= "false", data-toggle="dropdown", type="button"}
-      %button#dropdownMenu.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :type => "button"}
+      %button#dropdownMenu.btn.btn-default.dropdown-toggle{aria: {expanded: "false"}, data: {toggle: "dropdown"} ,type: "button"}
         Action
-      %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu1"}
+      %ul.dropdown-menu{aria: {labelledby: "dropdownMenu1"}}
         %li
           = link_to 'Edit', edit_product_path(product)
         %li
@@ -16,7 +16,7 @@
         = product.title
       .proto-meta
         .proto-user
-          %a{:href => "#"} #{current_user.name}
+          = link_to product.user.name, user_path(product.user.id), method: :get
         .proto-posted
           = product.created_at.strftime("%b %d")
       %ul.proto-tag-list.list-inline

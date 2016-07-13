@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update]
+  before_action :set_user, only: [:show, :edit]
   def show
-    @products = current_user.products
+    @products = @user.products.page(params[:page]).per(10)
   end
 
   def edit
-    @user = User.find(params[:id])
+
   end
 
   def update
@@ -16,6 +17,10 @@ class UsersController < ApplicationController
   private
   def update_params
     params.require(:user).permit(:name, :avatar, :profile, :work, :member)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 
 end
