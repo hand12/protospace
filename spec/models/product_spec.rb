@@ -2,10 +2,10 @@ require 'rails_helper'
 describe Product do
   describe 'associations' do
     context "with comments" do
-      let(:comments_count) {5}
+      let(:comment_count) {5}
       let!(:product) {create(:product, :with_comments)}
       it "deletes the comments when product is deleted" do
-        expect{product.destroy}.to change(Comment, :count).by(-1*comments_count)
+        expect{product.destroy}.to change{Comment.count}.by(-1*comment_count)
       end
     end
     context "with likes" do

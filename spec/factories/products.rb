@@ -5,33 +5,31 @@ FactoryGirl.define do
     concept {Faker::Lorem.paragraph}
 
     trait :with_comments do
-      #モデルに関係に保存されない値をセットすることができる
       transient do
-        comments_count 0
+        comments_count 5
       end
-
-      after(:create) do |product|
-        product.comments << create_list(:comment, 5)
+      after(:create) do |product, evaluator|
+        product.comments << create_list(:comment, evaluator.comments_count)
       end
     end
 
     trait :with_likes do
       transient do
-        likes_count 0
+        likes_count 5
       end
 
-      after(:create) do |product|
-        product.likes << create_list(:like, 5)
+      after(:create) do |product, evaluator|
+        product.likes << create_list(:like, evaluator.likes_count)
       end
     end
 
     trait :with_images do
       transient do
-        images_count 0
+        images_count 5
       end
 
-      after(:create) do |product|
-        product.product_images << create_list(:product_image, 5)
+      after(:create) do |product, evaluator|
+        product.product_images << create_list(:product_image, evaluator.images_count)
       end
     end
 
