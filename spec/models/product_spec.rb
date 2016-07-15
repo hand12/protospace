@@ -5,7 +5,7 @@ describe Product do
       let(:comment_count) {5}
       let!(:product) {create(:product, :with_comments)}
       it "deletes the comments when product is deleted" do
-        expect{product.destroy}.to change{Comment.count}.by(-1*comment_count)
+        expect{product.destroy}.to change(Comment, :count).by(-1*comment_count)
       end
     end
     context "with likes" do
@@ -16,7 +16,7 @@ describe Product do
       end
     end
     context "with images" do
-      let(:images_count) {5}
+      let(:images_count) {4}
       let!(:product) {create(:product, :with_images)}
       it "deletes the images when product is deleted" do
         expect{product.destroy}.to change(ProductImage, :count).by(-1*images_count)

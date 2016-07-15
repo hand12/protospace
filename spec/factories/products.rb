@@ -25,11 +25,12 @@ FactoryGirl.define do
 
     trait :with_images do
       transient do
-        images_count 5
+        images_count 3
       end
 
       after(:create) do |product, evaluator|
-        product.product_images << create_list(:product_image, evaluator.images_count)
+        product.product_images << create_list(:product_image, 1, :set_status_main)
+        product.product_images << create_list(:product_image, evaluator.images_count, :set_status_sub)
       end
     end
 
