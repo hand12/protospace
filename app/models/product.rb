@@ -3,7 +3,7 @@ class Product < ActiveRecord::Base
   has_many :product_images, dependent: :delete_all
   has_many :likes, dependent: :delete_all
   has_many :comments, dependent: :delete_all
-  accepts_nested_attributes_for :product_images, allow_destroy: true, reject_if: proc { |attributes| attributes['image'].blank? }
+  accepts_nested_attributes_for :product_images, allow_destroy: true, reject_if: proc { |attributes| attributes["status"].blank? }
   acts_as_taggable
 
   validates :title, :catchcopy, :concept, presence: true

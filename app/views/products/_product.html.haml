@@ -1,7 +1,6 @@
 .col-sm-4.col-md-3.proto-content
   - if product.user == current_user
     .drop_menu_location
-      -# %button#dropdownMenu.btn.btn-default.dropdown-toggle{ aria-expanded= "false", data-toggle="dropdown", type="button"}
       %button#dropdownMenu.btn.btn-default.dropdown-toggle{aria: {expanded: "false"}, data: {toggle: "dropdown"} ,type: "button"}
         Action
       %ul.dropdown-menu{aria: {labelledby: "dropdownMenu1"}}
@@ -10,16 +9,16 @@
         %li
           = link_to 'Delete', product_path(product), method: :delete
   .thumbnail
-    = link_to (image_tag product.main_image_url), product_path(product.id)
+    = link_to (image_tag product.main_image_url), product_path(product)
     .caption
       %h3
         = product.title
       .proto-meta
         .proto-user
-          = link_to product.user.name, user_path(product.user.id), method: :get
+          = link_to product.user.name, user_path(product.user), method: :get
         .proto-posted
           = product.created_at.strftime("%b %d")
       %ul.proto-tag-list.list-inline
         - product.tags.each do |tag|
           %li
-            = link_to "#{tag.name}", tag_path(tag.id), class: "btn btn-default"
+            = link_to "#{tag.name}", tag_path(tag), class: "btn btn-default"
