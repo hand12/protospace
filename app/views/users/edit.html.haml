@@ -1,5 +1,5 @@
 = form_for(@user) do |f|
-  .container.user-new{:action => ""}
+  .container.user-new
     .col-md-8.col-md-offset-2
       %header.row.user-nav.row
         .col-md-12
@@ -7,10 +7,10 @@
           .user-name_image.row
             .user-name.col-md-10
               = f.text_field :name, placeholder: "Username", autofocus: true
-            .user-image.col-md-2{:style => 'background-image: "#{current_user.avatar.url}";'}
+            .user-image.col-md-2
+              = image_tag(@user.avatar.thumb, class: "user-image-box")
               = f.file_field :avatar
               %button.btn.btn-primary Change image
-              %input{:type => "file"}/
         .col-md-12
           %h4 Member of
           .user-user-member.row

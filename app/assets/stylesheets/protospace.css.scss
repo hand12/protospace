@@ -617,3 +617,12 @@ body {
   display: none;
   list-style: none;
 }
+
+.user-image-box {
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
