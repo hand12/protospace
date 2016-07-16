@@ -3,7 +3,6 @@ FactoryGirl.define do
     title {Faker::Name.title}
     catchcopy {Faker::Lorem.sentence}
     concept {Faker::Lorem.paragraph}
-
     trait :with_comments do
       transient do
         comments_count 5
@@ -29,7 +28,7 @@ FactoryGirl.define do
       end
 
       after(:create) do |product, evaluator|
-        product.product_images << create_list(:product_image, 1, :set_status_main)
+        product.product_images << create(:product_image, :set_status_main)
         product.product_images << create_list(:product_image, evaluator.images_count, :set_status_sub)
       end
     end
