@@ -2,21 +2,21 @@ require 'rails_helper'
 describe Product do
   describe 'associations' do
     context "with comments" do
-      let(:comment_count) {5}
+      let(:comment_count) { 5 }
       let!(:product) {create(:product, :with_comments)}
       it "deletes the comments when product is deleted" do
         expect{product.destroy}.to change(Comment, :count).by(-1*comment_count)
       end
     end
     context "with likes" do
-      let(:likes_count) {5}
+      let(:likes_count) { 5 }
       let!(:product) {create(:product, :with_likes)}
       it "deletes the likes when product is deleted" do
         expect{product.destroy}.to change(Like, :count).by(-1*likes_count)
       end
     end
     context "with images" do
-      let(:images_count) {4}
+      let(:images_count) { 4 }
       let!(:product) {create(:product, :with_images)}
       it "deletes the images when product is deleted" do
         expect{product.destroy}.to change(ProductImage, :count).by(-1*images_count)
@@ -27,7 +27,6 @@ describe Product do
     context "with valid attributes" do
       let(:product) {create(:product)}
       it "has a valid factory" do
-        product.valid?
         expect(product).to be_valid
       end
     end
