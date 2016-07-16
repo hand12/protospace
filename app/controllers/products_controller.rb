@@ -16,7 +16,6 @@ class ProductsController < ApplicationController
     end
     @product = Product.eager_load(:comments, :product_images).find(params[:id])
     @comment = Comment.new
-    @comments = @product.comments
   end
 
   def create
@@ -24,6 +23,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to :root, notice: "create a product!"
     else
+      flash.now[:alert] = 'Your prototype was unsuccessfully created'
       render :new
     end
   end
@@ -36,6 +36,7 @@ class ProductsController < ApplicationController
     if @product.update(update_params)
       redirect_to :root, notice: "update a product!"
     else
+      flash.now[:alert] = 'Your prototype was unsuccessfully updated'
       render :edit
     end
   end
