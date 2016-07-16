@@ -21,12 +21,9 @@
         = image_tag(@product.main_image.image_url, class: 'img-responsive')
       .col-md-3
         %ul.proto-sub-list.list-group
-          %li.list-group-item
-            = image_tag(@product.sub_image_url(0), class: 'img-responsive')
-          %li.list-group-item
-            = image_tag(@product.sub_image_url(1), class: 'img-responsive')
-          %li.list-group-item
-            = image_tag(@product.sub_image_url(2), class: 'img-responsive')
+          - 3.times do |i|
+            %li.list-group-item
+              = image_tag(@product.sub_image_url(i), class: 'img-responsive')
     .row.proto-description
       .col-md-3
         %h4 Catch Copy
@@ -45,10 +42,10 @@
   .row.proto-comments
     %h4.col-md-12
       Comments
-      %span.num (#{@comments.count})
+      %span.num (#{@product.comments.count})
     .col-md-8
       #comment
-        = render partial: 'comments/comment', collection: @comments
+        = render partial: 'comments/comment', collection: @product.comments
       .form-inline
         = form_for [@product, @comment], remote: true do |f|
           %h4 Write a comment
