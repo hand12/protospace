@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update]
-  before_action :set_user, only: [:show, :edit]
+  before_action :set_user, only: [:show, :edit, :update]
   def show
     @products = @user.products.page(params[:page]).per(10)
   end
@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user.update(update_params)
+    if @user.update(update_params)
       redirect_to :root, notice: 'Your user infomation was successfully updated'
     else
       render :edit
