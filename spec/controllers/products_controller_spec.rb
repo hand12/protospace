@@ -7,6 +7,11 @@ describe ProductsController do
     product: attributes_for(:product,
     title: 'mage')
   }}
+  let(:unvalid_params) {{
+    id: product,
+    product: attributes_for(:product,
+    title: nil)
+  }}
 
   context "with user login" do
     before {login_user}
@@ -25,7 +30,7 @@ describe ProductsController do
     end
 
     describe 'GET #new' do
-      before :each do
+      before do
         get :new
       end
       it "assignd the requested to product" do
@@ -37,12 +42,15 @@ describe ProductsController do
     end
 
     describe 'POST #create' do
+      before do
+        post :create, params
+      end
       context 'with valid attributes' do
-        before :each do
-          post :create, params
-        end
         it "save the new product in the database" do
-          expect(product).to be_valid
+          expect{
+            post :create,
+            params
+            }.to change{Product.count}.by(+1)
         end
         it "redirects to root_path" do
           expect(response).to redirect_to root_path
@@ -51,11 +59,19 @@ describe ProductsController do
           expect(flash[:notice]).to eq 'create a product!'
         end
       end
+      context 'with unvalid attributes' do
+        it "couldn't save the new product" do
+          expect{
+            post :create,
+            unvalid_params
+            }.to change{Product.count}.by(0)
+        end
+      end
     end
 
     describe 'GET #show' do
-      before :each do
-        get :show, params
+      before do
+        get :show, id: product
       end
       it "assigns the requested product to @product" do
         expect(assigns(:product)).to eq product
@@ -69,8 +85,8 @@ describe ProductsController do
     end
 
     describe 'GET #edit' do
-      before :each do
-        get :edit, params
+      before do
+        get :edit, id: product
       end
       it "assigns the requested product to @product" do
         expect(assigns(:product)).to eq product
@@ -86,7 +102,7 @@ describe ProductsController do
 
     describe 'PATCH #update' do
       context 'with valid attributes' do
-        before :each do
+        before  do
           patch :update, params
         end
         it "assignd the requested product to @product" do
@@ -101,6 +117,17 @@ describe ProductsController do
         end
         it "show flash messages to show update product successfuly" do
           expect(flash[:notice]).to eq 'update a product!'
+        end
+      end
+      context 'with unvalid attributes' do
+        before  do
+          patch :update, params
+        end
+        it "couldn't update the product" do
+          expect{
+            patch :update,
+            unvalid_params
+            }.to change{Product.count}.by(0)
         end
       end
     end
@@ -119,9 +146,6 @@ describe ProductsController do
         expect(response).to redirect_to new_user_session_path
       end
     end
-  end
-
-  context "without user login" do
     describe 'GET #new' do
       it "redirects sign_in page" do
         get :index
