@@ -33,5 +33,16 @@ FactoryGirl.define do
       end
     end
 
+    trait :with_images_build do
+      transient do
+        images_count 3
+      end
+
+      after(:build) do |product, evaluator|
+        product.product_images << build(:product_image, :set_status_main)
+        product.product_images << build_list(:product_image, evaluator.images_count, :set_status_sub)
+      end
+    end
+
   end
 end
