@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!, except: [:show, :index]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   def new
     @product = Product.new
