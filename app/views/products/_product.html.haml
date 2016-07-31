@@ -15,7 +15,7 @@
         = product.title
       .proto-meta
         .proto-user
-          = link_to product.user.name, user_path(product.user), method: :get
+          = link_to product.user.name, user_path(product.user)
         .proto-posted
           = product.created_at.strftime("%b %d")
       %ul.proto-tag-list.list-inline
