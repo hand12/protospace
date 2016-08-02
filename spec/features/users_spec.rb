@@ -34,7 +34,8 @@ feature 'Sign in' do
     3.times do |i|
       attach_file "product[product_images_attributes][#{i}][image]", "spec/fixtures/img/sample.jpg"
     end
-    expect(page).to have_content 'Edit Logout New Proto + Tag List Publish } © PROTO SPACE 2015.'
+    click_on 'Publish'
+    expect(page).to have_selector '.notice', text: 'create a product!'
   end
 
 end
